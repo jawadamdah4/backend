@@ -10,9 +10,9 @@ app.post("/NewLicense", (req, res) => {
   res.sendStatus(201);
 });
 app.get("/CheckMyKey", (req, res) => {
-  const body = req.body;
-  console.log(body,' \\ ', req.body);
-  if (body === "Amdah") res.status(201).send("You Are Conneted!");
+  const {code} = req.body;
+  console.log(code,' \\ ', req.body);
+  if (code === "Amdah") res.status(201).send("You Are Conneted!");
   else res.status(404).send("Your code is wormg!");
 });
 
