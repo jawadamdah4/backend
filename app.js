@@ -9,9 +9,8 @@ app.post("/NewLicense", (req, res) => {
   console.log(req.body);
   res.sendStatus(201);
 });
-app.get("/CheckMyKey", (req, res) => {
-  const {code} = req.body;
-  console.log(code,' \\ ', req.body);
+app.get("/CheckMyKey/:key", (req, res) => {
+const code = req.params.key
   if (code === "Amdah") res.status(201).send("You Are Conneted!");
   else res.status(404).send("Your code is wormg!");
 });
