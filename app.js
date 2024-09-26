@@ -11,8 +11,9 @@ app.post("/NewLicense", (req, res) => {
 });
 app.get("/CheckMyKey", (req, res) => {
   const body = req.body;
-  if (body == "Amdah") res.send("You Are Conneted!").sendStatus(201);
-  else res.send("Your code is wormg!").sendStatus(404);
+  console.log(body,' \\ ', req.body);
+  if (body === "Amdah") res.status(201).send("You Are Conneted!");
+  else res.status(404).send("Your code is wormg!");
 });
 
 app.listen(prot, () => {
