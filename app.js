@@ -10,8 +10,11 @@ app.post('/NewLicense', (req, res) => {
     res.sendStatus(201)
 })
 app.get('/CheckMyKey', (req, res) => {
-    console.log(req.body)
-    res.send('we are checking you key')
+    const body = req.body
+    if(body == "Amdah")
+    res.send('You Are Conneted!').sendStatus(201)
+else
+res.send('Your code is wormg!').sendStatus(404)
 })
 
 app.listen(prot, () => {
